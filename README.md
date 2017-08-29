@@ -5,7 +5,7 @@
 
 
 # 3D Visualization of Geospatial Data With Blender and Sketchfab
-In this learning modules introduce Blender and Sketchfab software, explain the process of transforming common geospatial data formats into 3D objects. They also explain how to visualize geospatial terrain analyses, hydrology and viewshed, and how to annotate and share geospatial analysis in form of an online interactive 3D model.
+These learning modules introduce Blender and Sketchfab software, explain the process of transforming common geospatial data formats into 3D objects. They also explain how to visualize geospatial terrain analyses, hydrology and viewshed, and how to annotate and share geospatial analysis in form of an online interactive 3D model.
 
 This tutorial is Prepared by : [Payam Tabrizian](https://github.com/ptabriz)<br>
 Delivered in Geospatial Visualization course at NC State instructed by Dr. Laura Tateosian <br>
@@ -29,14 +29,14 @@ Tested and reviewed by: [Garrett Millar](https://github.com/gcmillar)
 
 ___________________
 ## What is Blender and why use Blender?
-Blender is an open-source 3D modelling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modelling workflow. Moreover, powered by the [sketchfab addon](https://sketchfab.com/exporters/blender), you can easily export and publish your online geospatial models inside blender, so that everyone can interactively explore or download your work. <br>
+Blender is an open-source 3D modelling, rendering and game engine software. You can create photorealistic scenes and life-like animations with it. The feature that makes Blender highly suitable for geospatial visualization is its capability to import various georeferenced data thanks to the [BlenderGIS addon](https://github.com/domlysz/BlenderGIS). Almost every operation done in the blender interface, can be scripted in the Python scripting environment, allowing you to automate or batch process your 3D modelling workflow. Moreover, powered by the [Sketchfab addon](https://sketchfab.com/exporters/blender), you can easily export and publish your online geospatial models inside Blender, so that everyone can interactively explore or download your work. <br>
 [Learn more about Sketchfab]()<br>
 [A sample geospatial model in Sketchfab](https://sketchfab.com/models/298dfaf54e4447459275493e7b2adf96)<br>
 
 
 ## Basics of the Blender interface
 
-Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial.
+Blender has numerous components and features that, thanks to it open-source capabilities, are growing every day. Covering all aspects of the software itself would require several lessons. The purpose of this section is to provide a brief introduction to Blender's graphical user interface and some of its features that are essential for working with geospatial data, and will be used throughout this tutorial.
 
 |![Blender Viewport](img/Blender_interface.JPG)Blender interface|
 |:---:|
@@ -45,36 +45,35 @@ Blender has numerous components and features that, thanks to it open-source capa
 
 * Browse the workshop data folder, locate and open *interface_introduction.blend*
 
-Blender has a number of editors to view and modify various aspect of data. You can set each of the viewports to a specific editor and you can do that by clicking on the *editor type* selector (box icon next to *View*, see image below). This allows you to reorganize and customize the interface based on your project needs and preferences. Also, you can add editors by dragging the triangular shaped stripes at corners of each viewport. Below we will review some of them that are most relevant to handling geospatial data.
+Blender has a number of editors to view and modify various aspects of data. You can set each of the viewports to a specific editor by clicking on the *editor type* selector (box icon next to *View*, see image below). This allows you to reorganize and customize the interface based on your project needs and preferences. You can also add editors by dragging the triangular shaped stripes at corners of each viewport. The ones most relevant to handling geospatial data are reviewed below.
 [learn more about editors](https://docs.blender.org/manual/en/dev/editors/)
 ### 3D view
-The __3D View__ is the visual interface with the 3D data and scene with numerous functionalities for modeling, animation, texture painting, etc. Unlike the 2D environment of GIS software, where you can only navigate in x and y directions, 3D viewport allows full control over our viewing angle, depth, size, etc. You can press and hold down mouse scroll (or middle click) button to change the viewing angle (or orbiting around), shift and drag to pan, and roll to zoom back and forth.
+The __3D View__ is the visual interface with the 3D data and scene. This has numerous functionalities for modeling, animation, texture painting, etc. Unlike the 2D environment of GIS software, where you can only navigate in the x and y directions, 3D viewport allows full control over our viewing angle, depth, size, and so forth. You can press and hold down the mouse scroll button (or middle-click) to change the viewing angle (or orbit around the scene), Shift-key and drag the mouse to pan, and roll to zoom back and forth.
 
-Now note the toolbar on the left side of the region which is called __Tool shelf__ and it has a variety of the tools for 3D editing. Newly installed addons also appear in this toolbar. Now notice the bottom toolbar- so called __Header__. Header includes menus for adding, editing objects as well as viewing and shading options.
-
+Now note the the __Tool Shelf__, toolbar on the left side of the region which has tools for 3D editing. Newly installed addons also appear in this toolbar. Now notice the bottom toolbar, called __Header__. Header includes menus for adding, editing objects as well as viewing and shading options.
 
 |![Blender Viewport](img/editors_3dview_header.png) 3D view header (retrieved from Blender manual)|
 |:---:|
 
-Header's __View menu__ allow you to select a specific viewpoint such as top, left or different perspectives. Also notice that each of these commands have a keyboard shortcut associated with them. For example you can push `numpad 3` (if you have a full keyboard) to switch to top view.
+Header's __View menu__ allow you to select a specific viewpoint such as top, left, or different perspectives. Each of these commands have a keyboard shortcut. For example, `numpad 3` switch the viewpoint to the top view.
 
-__add menu__ Provides a list of different objects types that can be added to a scene
+__add menu__ Provides a list of different objects types that can be added to a scene.
 
-__Interaction mode__ allows you to toggle between the __Object mode__ and __Edit mode__. Edit mode allows you to access more low-level structures of your object, like faces, and vertices. In the examples that we complete in this tutorial, we will use some of these options to refine the surface model. It is important to get familiar with the 3 core elements, __faces*, __edges__ and __vertex__. You can select these elements by clicking on their corresponding icons.
+__Interaction mode__ allows you to toggle between __Object mode__ and __Edit mode__. Edit mode allows you to access more low-level structures of your object, like faces, and vertices. In the examples in this tutorial, we will use some of these options to refine the surface model. It is important to get familiar with the three core elements, __faces*, __edges__ and __vertices__. You can select these elements by clicking on their corresponding icons.
 
-On the right side of the interaction mode, is the viewport __Shading mode__ which you can use to choose the visualization and viewport rendering method. Default is the __Solid mode__ that shows objects with solid faces, but without textures and shading. The __Material mode__ shows the object with textures and is suitable for having an idea how 3D objects may look like with materials. The __Rendering mode__, enables real-time rendering, which computes the near-to-final product on-the-fly as you interact with the object.
+On the right side of the interaction mode, is the viewport __Shading mode__ which you can use to choose the visualization and viewport rendering method. Default is the __Solid mode__ that shows objects with solid faces, but without textures and shading. The __Material mode__ shows the object with textures and is suitable for previewing how 3D objects may look like with materials. The __Rendering mode__, enables real-time rendering, which computes the near-to-final product on-the-fly as you interact with the object.
 
 [Learn more about 3D view](https://docs.blender.org/manual/en/dev/editors/3dview/introduction.html#tool-shelf)
 
 ### Properties editor
 
-__Properties editor__ allows you to modify the properties of the scene, rendering setting, transforming objects or changing their material or texture properties. The components that we will work with in the following examples are *object, material and texture properties*.
+__Properties editor__ allows you to modify the properties of the scene, rendering settings, transforming objects or changing their material or texture properties. The components that we will work with in the following examples are *object, material and texture properties*.
 
-In the __Object properties__ tab you can transform the location, orientation and scale of the object, along with display properties of them. You can use numeric input for transformation parameters.
+In the __Object properties__ tab you can transform the location, orientation, and scale of an object, along with their display properties. You can use numeric input for transformation parameters.
 
-In __Materials__ tab you can assign or change an object’s material. You can add and remove material, or use material browser to assign previously created materials to the object. Some very basic material parameters include *Diffuse and Specular*. You can adjust the diffuse parameters to change the color and shading of the material and with Specular adjust the glossiness of the material. Also, play with the shading and transparency parameters to see how it impacts your object.
+In __Materials__ tab you can assign or change an object’s material. You can add and remove materials, or use the material browser to assign previously created materials to the object. Some basic material parameters include *Diffuse and Specular*. You can adjust the diffuse parameters to change the color and shading of the material. The specular parameter adjusts the glossiness of the material. Also, play with the shading and transparency parameters to see how it impacts your object.
 
-In __Texture tab__ you can assign texture to the materials. You can select from available textures already available in scene using texture browser, or load a new one from hard drive. Textures are not only applied as the surface color and pattern, they can also be used to adjust the surface transparency and roughness. For example, you can assign a black and white image texture to represent the surface roughness of a wood.
+In __Texture tab__ you can assign texture to the materials. You can select from textures already available in the scene using the texture browser, or load a new one from your computer. Textures are not only applied as the surface color and pattern, they can also be used to adjust the surface transparency and roughness. For example, you can assign a black and white image texture to represent the surface roughness of wood.
 
 Note: Properties editor's interface is dynamically changing according to the selected object. For example, if you select the light, the little sun icon will appear to set the light properties and similarly you should select camera to be able to see the camera tab and modify the properties.
 
@@ -82,16 +81,16 @@ Note: Properties editor's interface is dynamically changing according to the sel
 |:---:|
 
 ### Outliner
-As its name suggests, outliner lists and organizes the scene objects. From there you can set the hierarchy, visibility of the 3D objects or lock them if you need. You can also select and activate objects by clicking on their name in the list.
+As its name suggests, outliner lists and organizes the scene objects. From there you can set the hierarchy and visibility of the 3D objects or lock them. You can also select and activate objects by clicking on their name in the list.
 
 ### Python console
-The Python console is a very useful editor for testing and executing short commands, which can then integrated in larger workflows. The Blender modelling and gaming modules are already loaded in python console so you can you can test your code snippets without extra effort of calling the modules.
+The Python console is a useful editor for testing and executing short commands, which can then be integrated into larger workflows. The Blender modelling and gaming modules are already loaded in the Python console so you can you can test your code snippets without the extra effort of calling the modules.
 
 ![Blender Viewport](img/python_console.png) <br> Python console (retrieved from Blender manual)|
 |:---:|
 
 ### Text Editor
-Text editor allows you to edit your python script and run it inside Blender.
+The Text Editor allows you to edit your Python script and run it inside Blender.
 By pressing the __+__ icon you can start a new file and click on __Run Script__ to execute your code.
 
 ![Blender Viewport](img/text_editor.png) <br> Text Editor|
@@ -107,7 +106,7 @@ __Node editor__ is an interface for any node based workflow. However, our focus 
 
 #### Basic object selection and interaction
 
-__Objects__ are basically everything that you see in the 3D view. They include 3D objects, lights and camera. You can select any object in the scene using the mouse right-click. Selected objects are highlighted in orange so you can easily distinguish them. Use the 3 axes (i.e., handles) to move the object in your preferred direction. To select multiple objects, press and hold `control` key and right click on objects to add to your selection. You can rotate objects by pressing `R` keyboard button, or scale objects using `S` key. Note that when you are transforming an object, a numeric output on the left bottom of the 3D viewport will give you more precise feedback on how much you moved, rotated or scaled an object. You can delete the object by selecting it, pressing `delete` key and selecting ok.
+__Objects__ are basically everything that you see in the 3D view. They include 3D objects, lights, and cameras. You can select any object in the scene using the mouse right-click. Selected objects are highlighted in orange so you can easily distinguish them. Use the 3 axes (the handles) to move the object in your preferred direction. To select multiple objects, press and hold the `Ctrl` key and right click on objects to add to your selection. You can rotate objects by the pressing `r` keyboard button, or scale objects using `s` key. Note that when you are transforming an object, a numeric output on the left bottom of the 3D viewport will give you more precise feedback on how much you moved, rotated, or scaled an object. You can delete the object by selecting it, pressing `Delete` key and selecting OK.
 
 Other Complementary resources for learning blender interface
 [Blender manual](https://docs.blender.org/manual/en/dev/interface/index.html)
@@ -117,52 +116,51 @@ Other Complementary resources for learning blender interface
 
 ## Georeferencing the Blender Scene
 
-In this section we will learn how to setup blender GIS addon, georeferences and importing raster files and assigning textures to them. We will use Dorothia Dix park in Raleigh/NC as a case study for this tutorial.
+This session discusses how to the setup blender GIS add-on, georeferences and imports raster files, and assigns textures to them. We will use the Dorothia Dix Park in Raleigh, North Carolina, as a case study for this tutorial.
 
 #### Downloading the tutorial folder and material
-* Go to workshop [link](https://github.com/ptabriz/ICC_2017_Workshop) and click on download, then download as zip option
-* Extract the zip file
+* Go to the workshop [link](https://github.com/ptabriz/ICC_2017_Workshop) and click the 'Clone or Download' button, then select the Download ZIP option.
+* Extract the zip file.
 
-#### Setting up Blender GIS addon
-* Click [here](https://github.com/domlysz/BlenderGIS) to download BlenderGIS addon and make sure that addon and required dependencies are properly installed
-* Open Blender
+#### Setting up Blender GIS add-on
+* Click [here](https://github.com/domlysz/BlenderGIS) to download the BlenderGIS add-on and make sure that the add-on and required dependencies are properly installed as follows.
+* Open Blender.
 * Go to __file__ >  __user preferences__ ( `Alt + Ctrl + U` ) > __Add-ons__  
-* In the search tab, on top left type "gis" and make sure that in the __Categories__ section __All__ is selected.
-* In the search results you should be able to see __3Dview: BlenderGIS__. Select to load the addon.
-* From the bottom of the preferences window click __Save User Settings__ so the addon is loaded next time you open blender
+* Select __Install from File...__, browse to and select the downloaded zipfile.  Select __Install from File...__ again. 
+* In the search tab, on top left type "gis" and make sure that in the __Categories__ section, __All__, is selected.
+* In the search results you should be able to see __3Dview: BlenderGIS__. Select this to load the add-on.
+* From the bottom of the preferences window click __Save User Settings__ so that the add-on is loaded the next time you open Blender.
 
 
 #### Adding a new predefined coordinate reference system (CRS)
 
-Before setting up the coordinate reference system of the Blender scene and configuring the scene projection, you should know the Coordinate Reference System (CRS) and the Spatial Reference Identifier (SRID) of your project. In GRASS GIS, CRS information can be retrieved using  `v.info` or `r.info` functions . You can get the SRID from [http://epsg.io/](http://epsg.io/) or [spatial reference website ](http://spatialreference.org/) using your CRS. The example datasets in this exercise uses a NAD83(HARN)/North Carolina CRS (SSRID EPSG: 3358)   
+Before setting up the coordinate reference system of the Blender scene and configuring the scene projection, you should know the Coordinate Reference System (CRS) and the Spatial Reference Identifier (SRID) of your project. In GRASS GIS, CRS information can be retrieved using the `v.info` or `r.info` functions. You can get the SRID from [http://epsg.io/](http://epsg.io/) or [spatial reference website ](http://spatialreference.org/) using your CRS. The example datasets in this exercise use a NAD83(HARN)/North Carolina CRS (SSRID EPSG: 3358)   
 
-* In BlenderGIS add-on section (in preferences windows), select to expand the __3D View: BlenderGIS__  
-* In the preferences section find __Spatial Reference Systems__ and click on the __+ Add__ button
-* In the add window put  "3358" for __definition__ and "NAD83(HARN)/North Carolina" for __Description__. Then select __Save to addon preferences__
+* In the BlenderGIS add-on section (in the User Preferences window), click the triangle next to __3D View: BlenderGIS__ to expand the settings for this add-on.  
+* In the Preferences section, find __Spatial Reference Systems__ and click on the __+ Add__ button.
+* In the add window put "3358" for __Definition__ and "NAD83(HARN)/North Carolina" for __Description__. Then select __Save to addon preferences__
 * Select __OK__ and close the User Preferences window
 
 [Learn more](https://github.com/domlysz/BlenderGIS/wiki/Gereferencing-management) about Georefencing management
 
 #### Opening the blender file and setting the Coordinate system
-* Go to __file__ > __open__  and browse to find the downloaded 'ICC_workshop' folder and open the 'ICC_viewshed_example.blend' file
+* Go to __File__ > __Open__  and browse to find the downloaded 'ICC_workshop' folder and open the 'ICC_viewshed_example.blend' file and select __Open Blender File__
 * From the __3D view__ toolbar (on the left side of the screen) , find __GIS__ panel
-If you cannot find the GIS tab, then check if the add-on is properly installed and activated in blender preferences (Setting up Blender GIS addon step)
-*  In the second section of the panel , __Geoscene__, click on the Gear shaped icon. You should be able to find and select the __NAD83(HARN)/North Carolina__ preset. Click on __Ok__ to set it as scene coordinate system.
+If you cannot find the GIS tab, try to stretch your Blender application window further vertically.  The tab may not be visible until you stretch the windows.  If it is still not there, then check if the add-on is properly installed and activated in blender preferences (see the Setting up Blender GIS add-on step)
+*  In the second section of the panel, __Geoscene__, click on the gear-shaped icon. You should be able to find and select the __NAD83(HARN)/North Carolina__ preset. Click on __OK__ to set it as scene coordinate system.
 
 ----------
 
 ## Importing Geospatial data
 
 #### Georasters
-Rasters can be imported and used in different ways. You can import them _As DEM_ to use it as a 3D surface or as_Raw DEM_  to be triangulated or skinned inside Blender. You can select _On Mesh_ to drape them as a texture on your 3D meshes. In this example, we import a digital surface model (DSM) derived from Lidar data points dataset as a 3D mesh using _As DEM_ method.
-Note: Blender GIS imports both Digital Elevation Model (DEM) and Digital Surface Model (DSM) through _As DEM_ method.
+Rasters can be imported and used in different ways. You can import a raster _As DEM_ to use it as a 3D surface or _as_Raw DEM_  to be triangulated or skinned inside Blender. Alternatively, you can select _On Mesh_ to drape them as a texture on your 3D meshes. In this example, we import a digital surface model (DSM) derived from LiDAR data points as a 3D mesh using the _As DEM_ method.
+Note: Blender GIS imports both Digital Elevation Model (DEM) and Digital Surface Model (DSM) through the _As DEM_ method.
 
-* Go to  __file__ > __import__ > __Georeferenced raster__ > (Alternatively you can access raster import using raster icon in Blender GIS toolbar)
-* On the bottom left side of the window find  __Mode__ and select __As DEM__
-* For __Subdivision__ select  __Mesh__ and make sure that __CRS__ is set to NAD83(HARN)/North carolina.
+* Go to  __File__ > __Import__ > __Georeferenced raster__ > (You can also access raster import using the raster icon in the Blender GIS toolbar)
+* On the bottom left side of the window, set the __Mode__ to __As DEM__, set __Subdivision__ to __Mesh__ and set __CRS__ to NAD83(HARN)/North carolina.
 * Browse to the 'ICC_workshop' folder and select 'dsm.tif' (in sample_files)
-* If all the steps are followed correctly, you should be able to see the terrain in 3D viewport, and in outliner. If there is no terrain in 3D view and you can see "dsm" object in outliner, zoom back (with mouse scroll) until you see the terrain in viewport
-
+* If all the steps are followed correctly, you should be able to see the terrain in the 3D viewport, and in the outliner list. If there is no terrain in the 3D view and you can see "dsm" object in outliner, zoom back (with mouse scroll) until you see the terrain in the 3D viewport.
 
 Note: When importing your own raster data, you might encounter situations where the DSM is imported as a flat surface. Make sure that 1) you selected the _As DEM_ method 2) the raster resolution is not very low, 3) the data-type is float32, and 4) the coordinate system of the raster is matching the Blender Scenes' coordinate system. For more detailed instructions and troubleshooting read [georeference raster import](https://github.com/domlysz/BlenderGIS/wiki/Import-georef-raster) wiki .
 
@@ -176,15 +174,15 @@ bpy.ops.importgis.georaster(filepath=fileName, importMode="DEM", subdivision="me
 ```
 
 #### Surface subdivision and refinement
-Usually when surface or elevation models are imported in Blender they are downsampled to a defaults subdivision resulting in smoothing out the surface details.
+Usually when surface or elevation models are imported in Blender they are down-sampled to a default subdivision which smooths the surface details.
 The following procedure subdivides the imported mesh into smaller faces to enhance the surface representation.
 
 * Select surface model (right click on the object)
-* Go to __3D view__ editor's bottom toolbar > __Object interaction mode__ >  __Edit Mode__
+* On the __3D View Header__ (bottom toolbar), set the Mode to __Edit Mode__
 * Switch to __Face select__
 * If object is not orange in color (i.e., nothing is selected), go to __Select__ > __(De)select All__ (or press `A`) to select all faces (when the object faces are selected, they will turn orange)
-* Go to __Tools__ (left toolbar) > __Mesh Tools__ > __Subdivide__ . The subdivide dialogue should appear on the bottom left on the toolbar. Type "5" in the number of cuts tab
-* Go to __3D view__ editor's bottom toolbar > __Object interaction mode__ >  __Object Mode__ . You should be able to see the surface details at this point.
+* Go to the __Tool Shelf__ and select __Mesh Tools__ > __Subdivide__ . The subdivide dialogue should appear on the bottom left on the toolbar. Type "5" in the __Number of Cuts__ box.
+* On the __3D View Header__ (bottom toolbar), set the Mode to >  __Object Mode__. You should be able to see the surface details at this point.
 
 ![Blender Viewport](img/Face_Select.JPG)
 
@@ -196,23 +194,23 @@ bpy.ops.mesh.select_all(action='SELECT')
 bpy.ops.mesh.subdivide(number_cuts=5, smoothness=0.2)
 bpy.ops.object.mode_set(mode='OBJECT')
 ```
-Note: The subdivision number is based on your data resolution. Increasing the subdivision parameter may results in a very large blender file which heavily slows down the modelling. Try different subdivision parameters to find the lowest number that produces the ideal precision
+Note: The subdivision number is based on your data resolution. Increasing the subdivision parameter may results in a very large blender file which substantially slows down the modelling. Try different subdivision parameters to find the lowest number that produces the ideal precision.
 
 |![Blender Viewport](img/dsm1.JPG) <br> DSM after import|![Blender Viewport](img/dsm2.JPG) <br> DSM after subdivision|
 |:---:|:---:|
 ----------
 
 ## Materials and Texture
-In this section we will drape the cumulative viewshed as a texture on the DSM. You can apply textures to the 3D surfaces in blender using complex mapping methods (e.g. height mapping, bump mapping, normal mapping, displacement mapping, reflection mapping, specular mapping, mipmaps, occlusion mapping). However, [texture mapping](https://en.wikipedia.org/wiki/Texture_mapping) is beyond the scope of this tutorial. If you are interested to learn more about texture mapping and materials in blender, [Blender wikibooks](https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Materials_and_Textures) is a good place to start.
+In this section we will drape a cumulative viewshed as a texture on the DSM. You can apply textures to the 3D surfaces in Blender using complex mapping methods (e.g., height mapping, bump mapping, normal mapping, displacement mapping, reflection mapping, specular mapping, mipmaps, or occlusion mapping). However, [texture mapping](https://en.wikipedia.org/wiki/Texture_mapping) is beyond the scope of this tutorial. If you are interested in learning more about texture mapping and materials in Blender, [Blender wikibooks](https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Materials_and_Textures) is a good place to start.
 
 * Select __Cycles Render__ as your rendering engine (top header). Cycles is Blender’s ray-trace based production render engine.
 * Change the bottom editor panel to __node editor__ (click on icon in very left bottom of Blender window). This can be done by simply changing the _Editor Type selector_ button which is located at the left side of a header. _Node editor_  allows you to visually design workflows related to materials and textures in environment. Discover more about node editor. [here](https://www.blender.org/manual/en/editors/node_editor/introduction.html)
-*  Go to __3D view__ bottom header, find __Viewport shading__ button and select __Material__
-*  Go to __Properties tab__ > __Material__ > Press __+ New__ button to add material
+*  In the __3D View Header__, click the __Viewport shading__ button and select __Material__.
+*  Go to __Properties Window__ > __Material__ > Press __+ New__ button to add material
 *  Rename the material name to "cumulative_viewshed"
 *  Expand the __Surface__ section and click on the gray square shaped icon on right side on the __color__ parameter to see a popup window with texture parameters. Select __Image texture__
 *  Click on the open icon to browse the images. Load "ICC_workshop\cumulative_viewshed.png". Now you should be able to see the texture draped on the terrain (make sure you are in Material view mode)
-*  Go to __3D view__ bottom header, find __Viewport shading__ button and select __Rendered__ to see the on-the-fly rendering of the model with shadows.
+*  In the __3D View Header__, click the __Viewport shading__ button and select __Rendered__ to see the on-the-fly rendering of the model with shadows.
 
 Discover more about render engines and cycles [here](https://www.blender.org/manual/render/cycles/introduction.html)
 
@@ -319,9 +317,9 @@ __`GUI`__
 |![Blender Viewport](img/addon_toolbar_1.JPG) <br> Georeferencing setup in Blender GIS |
 |:---:|
 
-### Importing DSM
+### Importing Digital Surface Models (DSMs)
 __`GUI`__
-* Go to __file__ > __import__ > __Georeferenced Raster__
+* Go to __File__ > __Import__ > __Georeferenced Raster__
 * On the bottom left side of the window find  __Mode__ and select __As DEM__
 * Set __subdivision__ to *Mesh* and select *NAD83(HARN)* for georeferencing
 * Browse to the 'ICC_workshop' folder and select 'example1_dsm.tif'
@@ -371,7 +369,7 @@ In this step we will import viewpoint locations as a point feature shapefile. Th
 
 __`GUI`__
 * Import viewpoint shape file
-   * Go to __file__ > __import__ > __Shapefile__
+   * Go to __File__ > __Import__ > __Shapefile__
    * Browse workshop data directory, select *vpoints.shp* and click on __Import Shp__ . The shape import dialogue should appear in front of the GIS addon interface.
    * Activate “Elevation from field” and in field section select “height”
    * Activate “Separate objects”
@@ -391,7 +389,7 @@ bpy.ops.importgis.shapefile(filepath=fileName,fieldElevName="height",fieldObjNam
 ```
 
 ### Creating viewpoint markers
-Imported points are 2D vectors that cannot be rendered as they don't have actual surfaces. Now we create 4 small spheres and match their location with the imported points to visualize observer locations in 3D.
+Imported points are two-dimensional vectors that cannot be rendered as they don't have actual surfaces. Now we create four small spheres and match their location with the imported points to visualize the observer locations in 3D.
 
 __`GUI`__
 * To create spheres on the viewpoint location:
@@ -429,7 +427,7 @@ for obj in bpy.data.objects:
 
 ### Generating 4 copies of the surface and viewpoint spheres
 
-In this step we create 4 copies of the surface model and move each of the viewpoint spheres to the  
+In this step, we create four copies of the surface model and move each of the viewpoint spheres to the  
 corresponding surface
 
 __`GUI`__
@@ -596,7 +594,7 @@ for obj in bpy.data.objects:
 ### Batch processing
 Now lets try to run the entire procedure with a python file using __Text editor__ and __Python console__  
 
-* From top header goto  __file__> __New__ to Open a fresh copy of Blender
+* From top header goto  __File__> __New__ to Open a fresh copy of Blender
 * Save the blender file with you preferred name in the workshop directory.
   __Note__: This is an important step since your all the paths in python code are linked to that directory
 * In the top header find __Layout__ (right next to __help__ ) and switch the layout to *Scripting* The scripting layout includes : a __Text editor__(left), a __Python Console__ (bottom) and __3D view__ (right)
